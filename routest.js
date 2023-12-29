@@ -81,7 +81,6 @@ export const routeList = [
     meta: {
       title: '去百度',
       icon: 'link',
-      link: 'https://www.baidu.com/',
     },
   },
 ];
