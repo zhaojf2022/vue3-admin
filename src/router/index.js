@@ -38,15 +38,6 @@ export const constantRoutes = [
     },
     hidden: true,
   },
-  {
-    path: '/https://www.baidu.com/',
-    name: 'https://www.baidu.com/',
-    meta: {
-      title: '去百度',
-      icon: 'link',
-      link: 'https://www.baidu.com/',
-    },
-  },
 ];
 
 const router = createRouter({
