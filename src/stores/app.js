@@ -1,5 +1,7 @@
 import { defineStore } from 'pinia';
-import router from '@/router';
+import router, { constantRoutes, filterAsyncRouter } from '@/router';
+
+import { routeList } from './../../routest';
 export const useAppStore = defineStore('app', {
   state: () => {
     return {
@@ -23,16 +25,11 @@ export const useAppStore = defineStore('app', {
     },
     // 模拟获取菜单接口
     getMenusApi() {
-      this.authMenusList = [
-        'account',
-        'resources',
-        'accountDetail',
-        'baidu',
-        'role',
-        'from',
-        'table',
-        'sku',
-      ];
+      return new Promise((resolve) => {
+        const sidebarRoutes = filterAsyncRouter(routeList);
+        this.authMenusList = constantRoutes.concat(sidebarRoutes);
+        resolve(sidebarRoutes);
+      });
     },
     clearGlobalToken() {
       this.globalToken = null;

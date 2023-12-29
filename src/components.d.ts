@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppHeader: typeof import('./layout/components/AppHeader/index.vue')['default']
+    AppLink: typeof import('./layout/components/Sidebar/AppLink.vue')['default']
     AppMain: typeof import('./layout/components/AppMain/index.vue')['default']
     Breadcrumb: typeof import('./layout/components/AppHeader/components/Breadcrumb/index.vue')['default']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
@@ -40,7 +41,6 @@ declare module 'vue' {
     ElTabs: typeof import('element-plus/es')['ElTabs']
     ElUpload: typeof import('element-plus/es')['ElUpload']
     Hamburger: typeof import('./layout/components/AppHeader/components/Hamburger/index.vue')['default']
-    InputNumber: typeof import('./components/InputNumber/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Screenfull: typeof import('./layout/components/AppHeader/components/Screenfull/index.vue')['default']

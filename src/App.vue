@@ -1,10 +1,8 @@
 <template>
-  <Layout></Layout>
+  <router-view />
 </template>
 
 <script setup>
-  import Layout from './Layout/index.vue';
-
   import { aesDecrypt } from '@/utils';
   console.log(
     aesDecrypt('ytCfMOa5qUknEuEBS5qrUIYtVmM5xz6MwdIMYyFoyv4=', 'lmd87x8qz4gbw51a'),

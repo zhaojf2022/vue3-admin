@@ -7,7 +7,7 @@
       </div>
     </router-link>
     <!-- 加上有滚动条 -->
-    <el-scrollbar>
+    <el-scrollbar wrap-class="scrollbar-wrapper">
       <!-- 菜单开始 -->
       <el-menu
         class="sidebar-container-menu"
@@ -17,14 +17,12 @@
         text-color="#bfcbd9"
         active-text-color="#fff"
         :collapse="!props.sidebarOpened"
-        :collapse-transition="true"
+        :collapse-transition="false"
         :unique-opened="true"
-        router
       >
         <SideBarItem
-          :sidebarOpened="!props.sidebarOpened"
-          v-for="route in menuRoutes"
-          :key="route.path"
+          v-for="(route, index) in menuRoutes"
+          :key="route.path + index"
           :route="route"
           :basePath="route.path"
         ></SideBarItem>
@@ -35,7 +33,9 @@
 
 <script setup>
   import SideBarItem from './SideBarItem.vue';
-
+  import { useAppStore } from '@/stores/app';
+  const appStore = useAppStore();
+  const menuRoutes = computed(() => appStore.authMenusList);
   const logoHeight = 44;
   const props = defineProps({
     sidebarOpened: {
@@ -52,9 +52,9 @@
   });
 
   // 导入路由表
-  import { routes } from '@/router';
+  // import { routes } from '@/router';
   // 渲染路由
-  const menuRoutes = computed(() => routes);
+  // const menuRoutes = computed(() => routes);
 </script>
 
 <style lang="scss" scoped>
