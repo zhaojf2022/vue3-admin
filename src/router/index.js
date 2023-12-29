@@ -54,7 +54,7 @@ const router = createRouter({
 // 白名单
 const whiteList = ['/login', 'home'];
 let isLoad = false;
-router.beforeEach(async (to, form, next) => {
+router.beforeEach((to, form, next) => {
   const appStore = useAppStore();
   NProgress.start();
   if (appStore.globalToken) {
