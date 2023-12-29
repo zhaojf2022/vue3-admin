@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
-import router, { constantRoutes, filterAsyncRouter } from '@/router';
-
+import router, { constantRoutes } from '@/router';
+import { filterAsyncRouter } from '@/utils';
 import { routeList } from './../../routest';
 export const useAppStore = defineStore('app', {
   state: () => {
