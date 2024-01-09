@@ -1,5 +1,5 @@
-export const base = 'admin-admin';
-export const APP_NAME = 'admin-admin';
+export const BASE = 'admin-admin';
+export const APP_NAME = 'iap-report_front';
 export const AUTH_TOKEN_NAME = 'token';
 export const AUTH_REFRESH_TOKEN_NAME = 'refreshToken';
 export const authMobile = '';
